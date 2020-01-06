@@ -2,13 +2,53 @@
 2019.12.29
 */
 /*容器的两种宽度*/
-@media all{
-    .contianer-80{
-        width:80%;
+@media all {
+    .container-80 {
+        width: 80%;
     }
-    
-    .contianer-100{
-        width:100%;
+
+    .container-100 {
+        width: 100%;
     }
-    
+
+}
+
+/*按钮、边框、控件*/
+@media all {
+    .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    .border-radius {
+        margin: 2em auto 0;
+        border: 1px solid #999999;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .control {
+        outline: none;
+        border: 1px solid #999999;
+        border-radius: 8px;
+        line-height: 2em;
+        margin: .5em 0;
+        text-indent: .5em;
+    }
+
 }
