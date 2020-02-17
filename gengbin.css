@@ -1,17 +1,6 @@
 /**
 2019.12.29
 */
-/*容器的两种宽度*/
-@media all {
-    .container-80 {
-        width: 80%;
-    }
-
-    .container-100 {
-        width: 100%;
-    }
-
-}
 
 /*按钮、边框、控件*/
 @media all {
