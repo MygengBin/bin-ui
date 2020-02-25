@@ -1,0 +1,21 @@
+/* 用于规定导航条
+    比如底部移动端导航
+    2020年02月25日 10点12分
+ */
+body {
+    margin: 0;
+}
+
+.nav {
+    width: 100%;
+    background: black;
+    color: white;
+    display: flex;
+}
+
+.nav > .tab {
+    list-style: none;
+    flex-grow: 1;
+    background: red;
+    margin: 0 1em;
+}
