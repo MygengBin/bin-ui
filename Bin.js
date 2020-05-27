@@ -1,6 +1,8 @@
 /**
  * 给子标签增加class
  */
+
+
 function childrenClass(parentClass) {
     for (let i = 0; i < parentClass.length; i++) {
         for (let j = 0; j < parentClass[i].children.length; j++) {
@@ -52,9 +54,21 @@ function navTab() {
     childrenClass(document.getElementsByClassName('bin-nav'));
 }
 
+import ChinaArea from "./js/ChinaArea.js";
+import RemStyle from "./js/RemStyle.js";
+
 export default class {
     constructor() {
         autoFooter();
         navTab();
+
+    }
+
+    remStyle() {
+        return RemStyle();
+    }
+
+    chinaArea() {
+        return ChinaArea;
     }
 }

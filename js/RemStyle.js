@@ -1,0 +1,23 @@
+/**
+ * rem移动端布局
+ * 给出最高元素标签的:font-size数值大小
+ */
+
+export default function () {
+    let clientWidth = document.documentElement.clientWidth;
+    let nowRem = (clientWidth / 375 * 10) + '';
+    return parseInt(nowRem, 10);
+}
+
+// setRem();
+//
+// $(function () {
+//     let timer;
+//     $(window).bind("resize", function () {
+//         clearTimeout(timer);
+//         timer = setTimeout(function () {
+//             setRem();
+//         }, 100)
+//     })
+// });
+
