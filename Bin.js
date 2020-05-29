@@ -33,12 +33,12 @@ function autoFooter() {
         }
         console.log(addEle);
         if (addEle) {
-            console.group('高度测试');
-            console.log(document.documentElement.clientHeight);
-            console.log(document.documentElement.scrollHeight);
-            console.log(document.documentElement.offsetHeight);
-            console.log(document.documentElement.clientHeight >= document.documentElement.scrollHeight);
-            console.groupEnd();
+            // console.group('高度测试');
+            // console.log(document.documentElement.clientHeight);
+            // console.log(document.documentElement.scrollHeight);
+            // console.log(document.documentElement.offsetHeight);
+            // console.log(document.documentElement.clientHeight >= document.documentElement.scrollHeight);
+            // console.groupEnd();
             if (document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
                 binFooter[binFooter.length - 1].className += ' bin-footer-fixed';
             }
@@ -64,11 +64,32 @@ export default class {
 
     }
 
-    remStyle() {
-        return RemStyle();
-    }
-
     chinaArea() {
         return ChinaArea;
+    }
+
+    /**
+     * 客户端支付
+     * 目前只能判断QQ/Wechat/Alipay
+     */
+    clientPay() {
+        let userAgent = navigator.userAgent;
+        if (userAgent.indexOf('MicroMessenger') > -1) {
+            // console.log('微信');
+            return "WeChat";
+        } else if (userAgent.indexOf('QQ') > -1) {
+            // console.log('QQ');
+            return "QQ";
+        } else if (userAgent.indexOf('AlipayClient') > -1) {
+            // console.log('支付宝');
+            return "ALiPay";
+        } else {
+            // console.log('不是这三个');
+            return false;
+        }
+    }
+
+    remStyle() {
+        return RemStyle();
     }
 }

@@ -23,9 +23,11 @@
     bin-btn 默认无边框样式
     <button class="bin-btn ">按钮1</button>
     <br>
-    bin-border-radius 1号边框样式<button class="bin-border-radius">按钮2</button>
+    bin-border-radius 1号边框样式
+    <button class="bin-border-radius">按钮2</button>
     <br>
-    bin-control 圆角边框样式<button class="bin-btn bin-control">按钮3</button>
+    bin-control 圆角边框样式
+    <button class="bin-btn bin-control">按钮3</button>
 </div>
 
 <div>
@@ -59,8 +61,10 @@
 
     onload = function () {
         let bin = new Bin();
-        console.log(bin.remStyle());
-        console.log(bin.chinaArea());
+        console.log('rem布局最高标签font-size大小:' + bin.remStyle());
+        console.log('中国城市级联：' + bin.chinaArea());
+        console.log('判断支付客户端' + bin.clientPay());
+
     }
 </script>
 </body>
