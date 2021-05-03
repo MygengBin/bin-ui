@@ -1,0 +1,51 @@
+/**
+规定头部
+ */
+@media all {
+    .bin-container-80 {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .bin-container-100 {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .bin-container-header {
+        background-color: black;
+        color: white;
+    }
+}
+
+/**
+规定底部
+ */
+@media all {
+    /**
+底部元素样式
+ */
+    .bin-container-footer {
+        width: 100%;
+        background-color: #2c3e50;
+        color: white;
+    }
+
+    /**
+    规定底部元素在最底部
+     */
+    .bin-footer-fixed {
+        position: fixed;
+        bottom: 0;
+    }
+
+    /**
+    规定不适用底部元素在最底部的样式
+     */
+    .bin-no-footer-fixed {
+        position: static !important;
+    }
+}
+
+

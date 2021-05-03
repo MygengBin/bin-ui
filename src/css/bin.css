@@ -1,0 +1,15 @@
+@import "container.css";
+@import "button.css";
+@import "link.css";
+@import "nav.css";
+
+/**
+    规定，body的flex布局为纵向布局
+    2020年4月21日 08点54分
+ */
+body {
+    margin: 0;
+    /*flex 布局 规格化，每个标签占领一行，纵向布局*/
+    display: flex;
+    flex-flow: column;
+}
