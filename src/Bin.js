@@ -54,8 +54,8 @@ function navTab() {
     childrenClass(document.getElementsByClassName('bin-nav'));
 }
 
-import ChinaArea from "./js/ChinaArea.js";
-import RemStyle from "./js/RemStyle.js";
+import ChinaArea from "./lib/resource/ChinaArea.js";
+import RemStyle from "./lib//rem/remParentElementSize.js";
 
 export default class {
     constructor() {
