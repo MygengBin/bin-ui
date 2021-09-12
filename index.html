@@ -56,6 +56,12 @@
         请在全局加载完毕函数中执行Class Bin()
     </pre>
 </footer>
+<p>
+    <label for="Province">省级城市：</label><select id="Province"></select>
+    <label for="City">市级地区：</label><select id="City"></select>
+    <label for="County">县级地区</label><select id="County"></select>
+    <label for="Township">乡、镇（街道）：</label><select id="Township"></select>
+</p>
 <script type="module">
     import Bin from "./Bin.js";
 
@@ -64,6 +70,59 @@
         console.log('rem布局最高标签font-size大小:' + bin.remStyle());
         console.log('中国城市级联：' + bin.chinaArea());
         console.log('判断支付客户端' + bin.clientPay());
+
+        new Promise((resolve, reject) => {
+            console.log('resolve:'+resolve);
+            console.log('reject:'+reject);
+        })
+        /*City the Level Connection*/
+        !function(Province,City,County,Township){
+            /*Province*/
+            (function () {
+                Object.keys(bin.chinaArea()).forEach(item=>{
+                    let option = document.createElement('option');
+                    option.setAttribute('value',item);
+                    option.innerText=item;
+                    Province.append(option);
+                })
+            })()
+            /*City*/
+            ~function(){
+                Object.keys(bin.chinaArea()[Province.value][0]).forEach(item=>{
+                    let option = document.createElement('option');
+                    option.setAttribute('value',item);
+                    option.innerText=item;
+                    City.append(option);
+                })
+            }()
+            /*County*/
+            ~function () {
+                bin.chinaArea()[Province.value][0][City.value].forEach(item=>{
+                    let option = document.createElement('option');
+                    option.setAttribute('value',Object.keys(item)[0]);
+                    option.innerText=Object.keys(item)[0];
+                    County.append(option);
+                })
+            }()
+            /*Township*/
+            ~function () {
+                bin.chinaArea()[Province.value][0][City.value].forEach(item=>{
+                    if(Object.keys(item)[0]===County.value){
+                        console.log(item[County.value].split('、'));
+                        item[County.value].split('、').forEach(item=>{
+                            let option = document.createElement('option');
+                            option.setAttribute('value',item);
+                            option.innerText= item.toString();
+                            Township.append(option);
+                        })
+                    }
+                })
+            }()
+        }(document.getElementById('Province'),
+            document.getElementById('City'),
+            document.getElementById('County'),
+            document.getElementById('Township')
+        )
 
     }
 </script>
