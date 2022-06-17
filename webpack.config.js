@@ -1,5 +1,6 @@
 var path = require('path');
 var HTMLWebpckPlugin = require('html-webpack-plugin');
+var { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     mode:'development',
     devServer:{
@@ -24,6 +25,7 @@ module.exports = {
         new HTMLWebpckPlugin({
             filename:'index.html',
             template:'index.html'
-        })
+        }),
+        new CleanWebpackPlugin(),
     ]
 }

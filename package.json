@@ -21,11 +21,10 @@
     "url": "https://github.com/MygengBin/bin-ui/issues"
   },
   "homepage": "https://github.com/MygengBin/bin-ui#readme",
-  "dependencies": {
-    "html-webpack-plugin": "^5.3.1"
-  },
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^5.2.4",
+    "html-webpack-plugin": "^5.5.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.36.2",
     "webpack-cli": "^3.3.12",
